@@ -1,9 +1,45 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>contatos</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-header style="text-align: center;">
+    <ion-toolbar>
+      <ion-title style="font-size: 30px;"><b>contatos</b></ion-title>
+      <ion-buttons slot="start">
+        <ion-button>
+          <ion-icon name="arrow-back-outline"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+  
+      <ion-buttons slot="end">
+        <ion-button (click)="inicioCadastro()"><b>Novo</b></ion-button>
+      </ion-buttons>
+  
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content>
+  
+    <ion-card *ngFor="let it of contatos">
+  
+      <ion-card-header style="text-align: center;">
+        <ion-card-title>
+          {{it.email}}
+        </ion-card-title>
+  
+        <ion-card-subtitle style="color:orangered;font-size: 20px;">
+          {{it.nome}}
+        </ion-card-subtitle>
 
-<ion-content>
-
-</ion-content>
+        <ion-card-subtitle style="color:orangered;font-size: 20px;">
+            {{it.telefone}}
+          </ion-card-subtitle>
+  
+      </ion-card-header>
+  
+      <ion-card-content>
+  
+        <ion-button style="margin-left: 50px;">Alterar</ion-button>
+        <ion-button color="secondary"(click)="excluir(it)">Excluir</ion-button>
+  
+      </ion-card-content>
+  
+    </ion-card>
+  
+  </ion-content>

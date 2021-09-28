@@ -1,9 +1,22 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>edita-contato</ion-title>
-  </ion-toolbar>
-</ion-header>
+    <ion-toolbar>
+      <ion-title>Formulário Tarefa</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content>
+    <ion-input type="text" 
+          placeholder="Email"
+          [(ngModel)]="email"></ion-input>
+  
+    <ion-input type="text" 
+          placeholder="Nome"
+          [(ngModel)]="nome"></ion-input>
 
-<ion-content>
-
-</ion-content>
+    <ion-input type="text" 
+          placeholder="Telefone"
+          [(ngModel)]="telefone"></ion-input>
+          
+    <ion-button (click)="cadastrar()">Ok</ion-button>
+  </ion-content>
+  

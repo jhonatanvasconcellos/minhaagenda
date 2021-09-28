@@ -16,4 +16,8 @@ export class TarefaService {
   listar() {
     return this.firestore.collection("tarefas").snapshotChanges();
   }
+
+  excluir(tarefa){
+    this.firestore.doc("tarefas/"+tarefa.id).delete();
+  }
 }
